@@ -1,0 +1,24 @@
+unit UTelaListaFornecedores;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TFormListaFornecedores = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormListaFornecedores: TFormListaFornecedores;
+
+implementation
+
+{$R *.dfm}
+
+end.

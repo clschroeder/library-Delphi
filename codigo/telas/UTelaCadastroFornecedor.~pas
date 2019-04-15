@@ -1,0 +1,87 @@
+unit UTelaCadastroFornecedor;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, StdCtrls, Mask, ExtCtrls;
+
+type
+  TFormCadastroFornecedor = class(TForm)
+    PanelCadastroFornecedor: TPanel;
+    Panel1: TPanel;
+    LabelDataDoCadastro: TLabel;
+    LabeledEditCodigo: TLabeledEdit;
+    RadioGroupTipoPessoa: TRadioGroup;
+    Edit1: TEdit;
+    Panel2: TPanel;
+    Label1: TLabel;
+    LabeledEditRazaoSocial: TLabeledEdit;
+    LabeledEditNomeFantasia: TLabeledEdit;
+    LabeledEditInscricaoEstadual: TLabeledEdit;
+    MaskEditCNPJ: TMaskEdit;
+    Panel3: TPanel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    ComboBoxBairro: TComboBox;
+    ComboBoxEstado: TComboBox;
+    LabeledEditLogradouro: TLabeledEdit;
+    LabeledEditComplemento: TLabeledEdit;
+    LabeledEditNumero: TLabeledEdit;
+    MaskEditCEP: TMaskEdit;
+    Panel4: TPanel;
+    LabeledEditEmail: TLabeledEdit;
+    LabeledEditTelefone: TLabeledEdit;
+    Panel5: TPanel;
+    SpeedButton1: TSpeedButton;
+    ComboBoxCidade: TComboBox;
+    SaveDialog1: TSaveDialog;
+    OpenDialog1: TOpenDialog;
+    Memo1: TMemo;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    PrintDialog1: TPrintDialog;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCadastroFornecedor: TFormCadastroFornecedor;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormCadastroFornecedor.SpeedButton1Click(Sender: TObject);
+begin
+  if SaveDialog1.Execute then begin
+    Memo1.Lines.SaveToFile(SaveDialog1.FileName);
+  end;
+end;
+
+procedure TFormCadastroFornecedor.SpeedButton2Click(Sender: TObject);
+begin
+  if OpenDialog1.Execute then
+  begin
+    Memo1.Lines.LoadFromFile(OpenDialog1.FileName);
+  end else
+  begin
+    ShowMessage('Ocorreu um erro');
+  end;
+end;
+
+procedure TFormCadastroFornecedor.SpeedButton3Click(Sender: TObject);
+begin
+  if PrintDialog1.Execute then begin
+    PrintDialog1.PrintToFile;
+  end;
+end;
+
+end.

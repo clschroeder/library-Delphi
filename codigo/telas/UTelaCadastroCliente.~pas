@@ -1,0 +1,25 @@
+unit UTelaCadastroCliente;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UFrameEndereco;
+
+type
+  TFormCadastroCliente = class(TForm)
+    FrameCadastroEndereco1: TFrameCadastroEndereco;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCadastroCliente: TFormCadastroCliente;
+
+implementation
+
+{$R *.dfm}
+
+end.
